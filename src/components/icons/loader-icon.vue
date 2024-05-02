@@ -1,0 +1,49 @@
+<!-- Loader.vue -->
+<template>
+    <div class="loader-container" v-if="loading">
+      <div class="loader"></div>
+    </div>
+</template>
+  
+<script>
+  export default {
+    name: 'LoaderIcon',
+    props: {
+      loading: {
+        type: Boolean,
+        required: true,
+      },
+    },
+  }
+</script>
+  
+<style scoped>
+  /* Loader styles go here */
+  .loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #302E7A;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+  
